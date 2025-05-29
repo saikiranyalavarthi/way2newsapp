@@ -8,6 +8,7 @@
     "scheme": "way",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
+   
     "ios": {
       "supportsTablet": true
     },
@@ -16,7 +17,9 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.my_sai.way",
+      "jsEngine": "hermes"
     },
     "web": {
       "bundler": "metro",
@@ -37,6 +40,13 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "ae2f9f86-6d75-422d-8c01-43366e52f7e5"
+      }
+    },
+    "owner": "my_sai"
   }
 }
