@@ -1,29 +1,9 @@
-// {
-//   "cli": {
-//     "version": ">= 16.6.1",
-//     "appVersionSource": "remote"
-//   },
-//   "build": {
-//     "development": {
-//       "developmentClient": true,
-//       "distribution": "internal"
-//     },
-//     "preview": {
-//       "distribution": "internal"
-//     },
-//     "production": {
-//       "autoIncrement": true
-//     }
-//   },
-//   "submit": {
-//     "production": {}
-//   }
-  
-// }
+
+
 
 {
   "cli": {
-    "version": ">= 16.6.1",
+    "version": ">= 3.0.0",
     "appVersionSource": "remote"
   },
   "build": {
@@ -32,12 +12,13 @@
       "distribution": "internal"
     },
     "preview": {
+      "developmentClient": true,
       "distribution": "internal"
     },
     "production": {
       "autoIncrement": true,
       "android": {
-        "buildType": "app-bundle"
+        "buildType": "apk"  // 👈 change to "app-bundle" for Play Store
       }
     }
   },

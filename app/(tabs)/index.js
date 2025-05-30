@@ -1,14 +1,15 @@
-import { View, Image, StyleSheet, Text } from "react-native";
 import React, { useState, useEffect } from "react";
+import { View, Image, StyleSheet, Text, SafeAreaView } from "react-native";
 import { useFonts } from "expo-font";
-import NewsScreen from "../../screens/NewsScreen"; // Update path if necessary
+import { StatusBar } from "expo-status-bar";
+import NewsScreen from "../../screens/NewsScreen"; // Adjust path if needed
 
 const App = () => {
   const [showLogo, setShowLogo] = useState(true);
 
   const [fontsLoaded] = useFonts({
     Pothana: require("../../assets/fonts/Pothana2000 Pothana2000.ttf"),
-    Mallanna: require("../../assets/fonts/Mandali-Regular.ttf"),
+    Mallanna: require("../../assets/fonts/Mallanna-Regular.ttf"),
     Ponnala: require("../../assets/fonts/Ramabhadra-Regular.ttf"),
   });
 
@@ -16,7 +17,6 @@ const App = () => {
     const timer = setTimeout(() => {
       setShowLogo(false);
     }, 3000);
-
     return () => clearTimeout(timer);
   }, []);
 
@@ -29,7 +29,8 @@ const App = () => {
   }
 
   return (
-    <View style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1 }}>
+      <StatusBar style="dark" backgroundColor="#FFDD00" />
       {showLogo ? (
         <View style={styles.logoContainer}>
           <Image
@@ -41,7 +42,7 @@ const App = () => {
       ) : (
         <NewsScreen />
       )}
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -55,7 +56,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#FFD700", // Gold
+    backgroundColor: "#FFDD00",
   },
   logo: {
     width: 200,
